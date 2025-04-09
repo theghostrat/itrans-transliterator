@@ -81,6 +81,8 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Generated output files
+# (allow requirements.txt)
+!requirements.txt
 *.txt
 *.docx
 *.pdf

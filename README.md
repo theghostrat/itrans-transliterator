@@ -41,7 +41,7 @@ flowchart TD
 ### 1. Install dependencies
 
 ```bash
-pip install indic-transliteration python-docx gradio
+pip install -r requirements.txt
 ```
 
 ---
