@@ -22,23 +22,16 @@ A powerful, open-source toolkit to convert ITRANS-encoded Sanskrit and Indic lan
 
 ---
 
-## Architecture
+## How it works
 
 ```mermaid
 flowchart TD
-    subgraph User
-        A1[Upload .itx file]
-        A2[Select scripts & formats]
-    end
-    subgraph Gradio_Web_UI
-        B1[Parse ITRANS text]
-        B2[Transliterate to Unicode]
-        B3[Generate TXT/DOCX files]
-        B4[Provide downloads]
-    end
-    A1 --> B1
-    A2 --> B2
-    B1 --> B2 --> B3 --> B4
+    A[ITRANS .itx file] --> B[Parse ITRANS text]
+    B --> C[Transliteration Engine]
+    C --> D[Unicode Text in Multiple Scripts]
+    D --> E{Export Formats}
+    E --> F[.txt files]
+    E --> G[.docx files]
 ```
 
 ---
@@ -55,66 +48,24 @@ pip install indic-transliteration python-docx gradio
 
 ## Gradio Web UI (Recommended)
 
-### Launch the app
-
 ```bash
 python gradio_app.py
 ```
 
-### How to use
-
-- Open the local URL (e.g., `http://127.0.0.1:7860`)
-- **Upload** your `.itx` file
-- **Select** target scripts (multi-select)
-- **Choose** export formats (`txt`, `docx`, or both)
-- **Download** the generated Unicode files
-
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant G as Gradio UI
-    U->>G: Upload .itx file
-    U->>G: Select scripts & formats
-    G->>G: Process & transliterate
-    G->>U: Provide download links
-```
+- Upload `.itx` file
+- Select scripts and formats
+- Download Unicode files
 
 ---
 
 ## CLI Tool
 
-### Run the CLI
-
 ```bash
 python transliterate_cli.py input.itx -f txt docx
 ```
 
-### Options
-
-- `input.itx`: Path to your ITRANS file
-- `-f`: Export formats (choose one or both)
-
-### What it does
-
 - Converts `.itx` to Unicode `.txt` and/or `.docx` files
 - Supports all major Indic scripts
-- Saves output files in the current directory
-
-```mermaid
-flowchart LR
-    C1[.itx file] --> C2[CLI Tool]
-    C2 --> C3[Transliterate to Unicode]
-    C3 --> C4[Export TXT/DOCX files]
-```
-
----
-
-## Why use this toolkit?
-
-- **Save time:** Automate transliteration
-- **Multi-script output:** Reach wider audiences
-- **Professional output:** Ready for publishing
-- **User-friendly:** Web UI or CLI options
 
 ---
 
