@@ -80,7 +80,8 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
-# Docx and generated files
+# Generated output files
+*.txt
 *.docx
 *.pdf
 *.zip
@@ -88,3 +89,4 @@ $RECYCLE.BIN/
 *.tar
 *.rar
 *.7z
+PLAN.md
