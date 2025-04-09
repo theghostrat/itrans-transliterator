@@ -4,7 +4,7 @@
 
 ## About
 
-**ITRANS Indic Transliteration Toolkit** is a powerful, open-source Python package and CLI tool that converts Sanskrit and Indic language texts written in the ITRANS ASCII scheme into beautiful Unicode text across multiple Brahmic scripts.
+**ITRANS Indic Transliteration Toolkit** is a powerful, open-source Python package with a modern **Gradio web interface** to convert Sanskrit and Indic language texts written in the ITRANS ASCII scheme into beautiful Unicode text across multiple Brahmic scripts.
 
 Whether you're a linguist, developer, researcher, or enthusiast, this toolkit helps you effortlessly transliterate ancient scriptures, poetry, or modern texts into your preferred Indic script, with support for multiple export formats.
 
@@ -12,11 +12,11 @@ Whether you're a linguist, developer, researcher, or enthusiast, this toolkit he
 
 ## Features
 
-- **Multi-script support:** Devanagari, Bengali, Gujarati, Gurmukhi, Kannada, Malayalam, Oriya, Tamil, Telugu
-- **Multi-format export:** Generate Unicode `.txt` and `.docx` files simultaneously
-- **Batch processing:** Convert entire `.itx` documents in one go
-- **Easy CLI:** Simple command-line interface with flexible options
-- **Open-source & extensible:** MIT licensed, easy to customize
+- **Interactive Gradio Web UI**: Upload `.itx` files, select scripts and formats, and download results instantly
+- **Multi-script support**: Devanagari, Bengali, Gujarati, Gurmukhi, Kannada, Malayalam, Oriya, Tamil, Telugu
+- **Multi-format export**: Unicode `.txt` and `.docx` files
+- **Batch processing**: Convert entire `.itx` documents in one go
+- **Open-source & extensible**: MIT licensed, easy to customize
 
 ---
 
@@ -25,14 +25,16 @@ Whether you're a linguist, developer, researcher, or enthusiast, this toolkit he
 ### 1. Install dependencies
 
 ```bash
-pip install indic-transliteration python-docx
+pip install indic-transliteration python-docx gradio
 ```
 
-### 2. Convert an `.itx` file to Unicode `.txt` and `.docx` files
+### 2. Launch the Gradio Web App
 
 ```bash
-python transliterate_cli.py yourfile.itx -f txt docx
+python gradio_app.py
 ```
+
+Then open the provided local URL (e.g., `http://127.0.0.1:7860`) in your browser.
 
 ---
 
@@ -41,13 +43,14 @@ python transliterate_cli.py yourfile.itx -f txt docx
 - **Save time:** Automate transliteration of large documents
 - **Multi-script output:** Reach wider audiences by publishing in multiple scripts
 - **Professional output:** Unicode text ready for publishing, printing, or further processing
-- **Community-driven:** Built on top of trusted open-source libraries like `indic-transliteration`
+- **User-friendly:** No coding required, just use the web interface
 
 ---
 
 ## Repository Highlights
 
-- `transliterate_cli.py` — Unified CLI tool with multi-format export
+- `gradio_app.py` — Interactive web UI with file upload, script/format selection, and downloads
+- `transliterate_cli.py` — CLI tool with multi-format export (optional)
 - `itrans_parser/` — Custom transliteration engine (optional)
 - `.gitignore` — Clean repo without generated files
 - `LICENSE` — MIT license for maximum freedom

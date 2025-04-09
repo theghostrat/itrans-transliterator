@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Indic Transliteration Toolkit</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+form {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+input[type="file"] {
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+}
+select, button {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+select {
+  background: #fff;
+  color: #000;
+}
+button {
+  background: #ff9800;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #e68900;
+}
+.results {
+  margin-top: 30px;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 100%;
+  overflow-x: auto;
+}
+footer {
+  background: rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Indic Transliteration Toolkit</h1>
+</header>
+<div class="container">
+  <form id="translitForm">
+    <input type="file" id="fileInput" accept=".itx" required />
+    <label for="scripts">Select Scripts:</label>
+    <select id="scripts" multiple>
+      <option value="devanagari">Devanagari</option>
+      <option value="bengali">Bengali</option>
+      <option value="gujarati">Gujarati</option>
+      <option value="gurmukhi">Gurmukhi</option>
+      <option value="kannada">Kannada</option>
+      <option value="malayalam">Malayalam</option>
+      <option value="oriya">Oriya</option>
+      <option value="tamil">Tamil</option>
+      <option value="telugu">Telugu</option>
+    </select>
+    <label for="formats">Export Formats:</label>
+    <select id="formats" multiple>
+      <option value="txt">TXT</option>
+      <option value="docx">DOCX</option>
+    </select>
+    <button type="submit">Transliterate</button>
+  </form>
+  <div class="results" id="results">
+    <h2>Results will appear here</h2>
+  </div>
+</div>
+<footer>
+  &copy; 2025 Indic Transliteration Toolkit. All rights reserved.
+</footer>
+<script>
+document.getElementById('translitForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const results = document.getElementById('results');
+  results.innerHTML = '<h2>Processing...</h2>';
+  setTimeout(() => {
+    results.innerHTML = '<h2>Transliteration Complete!</h2><p>Download links will appear here.</p>';
+  }, 2000);
+});
+</script>
+</body>
+</html>
